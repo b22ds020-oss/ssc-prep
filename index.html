@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>SSC CGL Flashcards</title>
+<meta name="description" content="Offline-first flashcard system for SSC CGL GK preparation — folders, smart import, spaced repetition and statistics." />
+<meta name="theme-color" content="#7C3AED" />
+<link rel="manifest" href="manifest.json" />
+<link rel="icon" href="icons/favicon.png" />
+<link rel="apple-touch-icon" href="icons/icon-192.png" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-theme="dark">
+
+<div class="app-shell">
+
+  <!-- Desktop sidebar -->
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark">🧠</div>
+      <div class="brand-text">
+        <div class="eyebrow">SSC CGL</div>
+        <div class="title">Flashcards</div>
+      </div>
+    </div>
+
+    <nav class="nav-list" id="nav-list">
+      <div class="nav-item" data-nav="dashboard"><span class="ic">🏠</span> Dashboard</div>
+      <div class="nav-item" data-nav="folders"><span class="ic">📁</span> Folders</div>
+      <div class="nav-item" data-nav="browse"><span class="ic">🗂️</span> All Cards</div>
+      <div class="nav-item" data-nav="statistics"><span class="ic">📊</span> Statistics</div>
+      <div class="nav-item" data-nav="import"><span class="ic">📥</span> Import</div>
+      <div class="nav-item" data-nav="settings"><span class="ic">⚙️</span> Settings</div>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="streak-chip"><span>🔥</span> <span id="streak-count">0</span>-day streak</div>
+      <button class="btn btn-ghost btn-sm" id="sidebar-roadmap-btn">🗺️ What's next</button>
+    </div>
+  </aside>
+
+  <div class="main-col">
+    <header class="topbar">
+      <div class="crumb" id="crumb"></div>
+      <div class="topbar-spacer"></div>
+      <div class="icon-btn" id="search-btn" title="Search">🔍</div>
+      <div class="icon-btn" id="theme-btn" title="Toggle theme">🌙</div>
+    </header>
+
+    <main class="view-root fade-in" id="view-root"></main>
+  </div>
+</div>
+
+<!-- Mobile bottom nav -->
+<nav class="bottom-nav">
+  <div class="bnav-item" data-nav="dashboard"><span class="ic">🏠</span>Home</div>
+  <div class="bnav-item" data-nav="folders"><span class="ic">📁</span>Folders</div>
+  <div class="bnav-fab" id="bnav-fab">＋</div>
+  <div class="bnav-item" data-nav="statistics"><span class="ic">📊</span>Stats</div>
+  <div class="bnav-item" data-nav="settings"><span class="ic">⚙️</span>More</div>
+</nav>
+
+<div id="modal-root"></div>
+<div class="toast" id="toast"></div>
+
+<script src="js/db.js"></script>
+<script src="js/srs.js"></script>
+<script src="js/parser.js"></script>
+<script src="js/seed.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
